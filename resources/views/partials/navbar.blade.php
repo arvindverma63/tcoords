@@ -16,16 +16,7 @@
                     <a class="nav-link active" aria-current="page" href="#hero">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#services">Services</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#projects">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#testimonials">Testimonials</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link d-lg-none" href="#contact">Contact</a>

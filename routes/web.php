@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LinkedInController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,3 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/signIn',[AuthController::class,'signIn']);
+Route::get('/login',[AuthController::class,'login']);
+
+
+Route::get('auth/linkedin', [LinkedInController::class, 'redirectToLinkedIn']);
+Route::get('auth/linkedin/callback', [LinkedInController::class, 'handleLinkedInCallback']);
