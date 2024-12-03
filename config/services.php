@@ -31,8 +31,8 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
     'linkedin' => [
-        'client_id' => env('LINKEDIN_CLIENT_ID'),
-        'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
+        'client_id' => env('LINKEDIN_CLIENT_ID') ?? "86mf6c3mkw9jv9",
+        'client_secret' => env('LINKEDIN_CLIENT_SECRET') ?? "WPL_AP1.RBO3P2enkLHVBUEa.oXiqcg==",
         'redirect' => env('LINKEDIN_REDIRECT_URL'),
     ],
 

@@ -20,6 +20,6 @@ Route::get('/', function () {
 Route::get('/signIn',[AuthController::class,'signIn']);
 Route::get('/login',[AuthController::class,'login']);
 
-
+Route::get('/callback',[AuthController::class,'callback']);
 Route::get('auth/linkedin', [LinkedInController::class, 'redirectToLinkedIn']);
 Route::get('auth/linkedin/callback', [LinkedInController::class, 'handleLinkedInCallback']);
