@@ -52,6 +52,7 @@ class LinkedinController extends Controller
                     Log::info('User registered successfully: ' . $linkedinUser->getName());
                     $responseData = $registerUserResponse->json();
                     Session::put('token', $responseData['token']);
+                    Session::put('user_id',$linkedinUser->getId());
                 } else {
                     Log::error('error'.$registerUserResponse);
                     Log::error('Failed to register user: ' . $linkedinUser->getName());
