@@ -1,8 +1,8 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\LinkedinController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LinkedInController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +22,6 @@ Route::get('/signIn',[AuthController::class,'signIn']);
 Route::get('/login',[AuthController::class,'login']);
 
 Route::get('/callback',[AuthController::class,'callback']);
-Route::get('linkedin/auth', [LinkedInController::class, 'handleLinkedinAuthentication'])->name('linkedin.auth');
-Route::get('linkedin/auth/callback', [LinkedInController::class, 'handleLinkedinCallback']);
+Route::get('linkedin/auth', [LinkedinController::class, 'handleLinkedinAuthentication'])->name('linkedin.auth');
+Route::get('linkedin/auth/callback', [LinkedinController::class, 'handleLinkedinCallback']);
 Route::get('dashboard',[AuthController::class,'index']);
