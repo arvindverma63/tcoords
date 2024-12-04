@@ -42,7 +42,7 @@ class LinkedinController extends Controller
                 Log::info('User not found, registering new user with LinkedIn data.');
                 $registerUserResponse = Http::post($baseUrl . '/register', [
                     'name' => $linkedinUser->getName(),
-                    'email' => $linkedinUser->getEmail(),
+                    'email' => $linkedinUser->getEmail() ?? null,
                     'linkedin_id' => $linkedinUser->getId(),
                     'password' => bcrypt('default-password'),
                     'avatar'=>$linkedinUser->getAvatar(),

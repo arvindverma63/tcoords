@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\LinkedinController;
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,3 +23,4 @@ Route::get('/callback',[AuthController::class,'callback']);
 Route::get('linkedin/auth', [LinkedinController::class, 'handleLinkedinAuthentication'])->name('linkedin.auth');
 Route::get('linkedin/auth/callback', [LinkedinController::class, 'handleLinkedinCallback']);
 Route::get('dashboard',[AuthController::class,'index']);
+Route::get('/team',[TeamController::class,'team']);
