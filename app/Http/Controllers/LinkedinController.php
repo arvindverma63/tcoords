@@ -17,8 +17,7 @@ class LinkedinController extends Controller
 
         // New OpenID implementation
         //dd(Socialite::driver('linkedin-openid')->scopes(['openid', 'profile', 'email', 'w_member_social']));
-        $redirectUrl = env('LINKEDIN_REDIRECT_URL');
-        return Socialite::driver('linkedin-openid')->redirectUrl($redirectUrl)->scopes(['openid', 'profile', 'email', 'w_member_social'])->redirect();
+        return Socialite::driver('linkedin-openid')->scopes(['openid', 'profile', 'email', 'w_member_social'])->redirect();
     }
 
     public function handleLinkedInCallback()
@@ -30,7 +29,6 @@ class LinkedinController extends Controller
             $linkedinUser = Socialite::driver('linkedin-openid')
                 ->stateless()
                 ->user();
-
             Log::info('LinkedIn user data retrieved: ' . json_encode($linkedinUser));
 
             $baseUrl = env('API_BASE_URL');  // Your backend API base URL
@@ -47,6 +45,7 @@ class LinkedinController extends Controller
                     'email' => $linkedinUser->getEmail(),
                     'linkedin_id' => $linkedinUser->getId(),
                     'password' => bcrypt('default-password'),
+                    'avatar'=>$linkedinUser->getAvatar(),
                 ]);
 
                 if ($registerUserResponse->successful()) {
@@ -54,6 +53,7 @@ class LinkedinController extends Controller
                     $responseData = $registerUserResponse->json();
                     Session::put('token', $responseData['token']);
                 } else {
+                    Log::error('error'.$registerUserResponse);
                     Log::error('Failed to register user: ' . $linkedinUser->getName());
                     return redirect('/')->withErrors('Unable to register your LinkedIn account. Please try again.');
                 }
