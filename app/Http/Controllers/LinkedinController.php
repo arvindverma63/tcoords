@@ -17,8 +17,7 @@ class LinkedinController extends Controller
 
         // New OpenID implementation
         //dd(Socialite::driver('linkedin-openid')->scopes(['openid', 'profile', 'email', 'w_member_social']));
-        $redirectUrl = env('LINKEDIN_REDIRECT_URL');
-        return Socialite::driver('linkedin-openid')->redirectUrl($redirectUrl)->scopes(['openid', 'profile', 'email', 'w_member_social'])->redirect();
+        return Socialite::driver('linkedin-openid')->scopes(['openid', 'profile', 'email', 'w_member_social'])->redirect();
     }
 
     public function handleLinkedInCallback()
