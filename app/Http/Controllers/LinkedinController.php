@@ -62,6 +62,7 @@ class LinkedinController extends Controller
                 Log::info('User already exists. Logging in user.');
                 $responseData = $checkUserResponse->json();
                 Session::put('token', $responseData['token']);
+                Session::put('user_id',$linkedinUser->getId());
             }
 
             // Redirect to the intended page after login
