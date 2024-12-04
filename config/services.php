@@ -32,7 +32,7 @@ return [
     ],
     'linkedin-openid' => [
         'client_id' => env('LINKEDIN_CLIENT_ID'),
-        'client_secret' => env('LINKEDIN_CLIENT_SECRET'),
+        'client_secret' => 'WPL_AP1.XpiNItklgOC4aw55.Q+KWBw==',
         'redirect' => env('LINKEDIN_REDIRECT_URI'),
     ],
 
