@@ -3,6 +3,7 @@
 
 <head>
     @include('partials.head')
+    <link rel="stylesheet" href="{{ asset('css/login-page.css')}}?v={{ time() }}" />
 </head>
 
 <body>
