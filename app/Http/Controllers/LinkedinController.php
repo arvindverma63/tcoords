@@ -9,8 +9,6 @@ use App\Models\User;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Session;
-use Illuminate\Support\Str;
-use PgSql\Lob;
 
 class LinkedinController extends Controller
 {

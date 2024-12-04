@@ -3,7 +3,6 @@
 use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LinkedInController;
-use App\Http\Controllers\SocialLogin\SocialController;
 
 /*
 |--------------------------------------------------------------------------
