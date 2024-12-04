@@ -15,10 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
-Route::get('/signIn',[AuthController::class,'signIn']);
+Route::get('/',[AuthController::class,'signIn']);
 Route::get('/login',[AuthController::class,'login']);
 
 Route::get('/callback',[AuthController::class,'callback']);
